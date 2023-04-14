@@ -18,6 +18,6 @@ public class Main {
             result += coin[i];
         }
 
-            System.out.println(result);
+        System.out.println(result);
     }
 }
