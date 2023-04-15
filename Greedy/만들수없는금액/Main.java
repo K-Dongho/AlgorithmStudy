@@ -1,5 +1,6 @@
 package Greedy.만들수없는금액;
 
+import java.sql.Array;
 import java.util.*;
 
 public class Main {
@@ -7,17 +8,25 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        int[] coin = new int[n];
-        for (int i = 0; i < n; i++) {
-            coin[i] = sc.nextInt();
-        }
-        Arrays.sort(coin);
-        int result = 1;
-        for (int i = 0; i < n; i++) {
-            if(result < coin[i]) break;
-            result += coin[i];
-        }
+        ArrayList<Integer> coin = new ArrayList<>();
 
-        System.out.println(result);
+        for (int i = 0; i < n; i++) {
+            coin.add(sc.nextInt());
+        }
+        Collections.sort(coin, Collections.reverseOrder());
+        int result = 1;
+        int cnt = 1;
+
+        while(true){
+            for (int i = 0; i < n; i++) {
+                if((result - coin.get(i)) >= 0) result -= coin.get(i);
+            }
+            if(result > 0) break;
+            else {
+                cnt++;
+                result = cnt;
+            }
+        }
+            System.out.println(cnt);
     }
 }

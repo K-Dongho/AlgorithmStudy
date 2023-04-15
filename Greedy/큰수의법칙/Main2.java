@@ -17,7 +17,7 @@ public class Main2 {
         int m = sc.nextInt();
         int k = sc.nextInt();
         int result = 0;
-        ArrayList<Integer> arrayList = arrayList = new ArrayList<>();
+        ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             arrayList.add(sc.nextInt());
         }
